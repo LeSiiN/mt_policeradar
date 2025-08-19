@@ -10,7 +10,7 @@ local function dbug(msg, table)
     end
 end
 
-RegisterServerEvent('lsl-policeradar:server:giveDetectionTicket', function(plate, speed)
+RegisterServerEvent('mt_policeradar:server:giveDetectionTicket', function(plate, speed)
     local src = source
     local player = exports.qbx_core:GetPlayer(src)
     if not player then return end
@@ -34,3 +34,4 @@ RegisterServerEvent('lsl-policeradar:server:giveDetectionTicket', function(plate
         return print(response)
     end
 end)
+
