@@ -90,13 +90,13 @@ exports("IsPlateWanted", function(plate)
 end)
 
 -- Kennzeichen auf Fahndungsliste setzen
--- exports["lsl-policeradar"]:AddWantedPlate(plate)
+-- exports["mt_policeradar"]:AddWantedPlate(plate)
 
 -- Kennzeichen wieder löschen
--- exports["lsl-policeradar"]:RemoveWantedPlate(plate)
+-- exports["mt_policeradar"]:RemoveWantedPlate(plate)
 
 -- Abfrage ob gesuchtes Fahrzeug
--- if exports["lsl-policeradar"]:IsPlateWanted(plate) then
+-- if exports["mt_policeradar"]:IsPlateWanted(plate) then
 --     print("🚨 plate ist auf der Liste!")
 -- end
 
@@ -187,7 +187,7 @@ RegisterCommand(Radar.showRadarCommand, function()
 
     -- Fahndungsliste Aktion
     if plate and action == 'add' then
-        if not exports["lsl-policeradar"]:IsPlateWanted(plate) then
+        if not exports["mt_policeradar"]:IsPlateWanted(plate) then
             wantedPlates[plate] = true
             notify(plate .. " zur Fahndungsliste hinzugefügt ✅", "success")
         else
@@ -219,7 +219,7 @@ RegisterCommand(Radar.showRadarCommand, function()
             },
         })
         if success then
-            TriggerServerEvent('lsl-policeradar:server:giveDetectionTicket', lastDetection.plate, lastDetection.speed)
+            TriggerServerEvent('mt_policeradar:server:giveDetectionTicket', lastDetection.plate, lastDetection.speed)
         end
     end
 end, false)
@@ -387,4 +387,5 @@ Citizen.CreateThread(function()
     TriggerEvent('chat:addSuggestion', '/'..Radar.changeRadarPositionCommand, '❯ Lasst dich die Position des Radars anpassen.')
     TriggerEvent('chat:addSuggestion', '/'..Radar.showRadarCommand, '❯ Öffnet das ANPR Menü.')
     TriggerEvent('chat:addSuggestion', '/'..Radar.lockRadarCommand, '❯ Toggle Radar')
+
 end)
