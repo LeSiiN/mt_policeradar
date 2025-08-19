@@ -2,24 +2,36 @@ return {
     -- Locale to use for the radar. The locale file must be in the locales folder of the resource.
     locale = 'en', -- DEFAULT: en
 
+    debug = false,
+
+    -- jobs that are allowed to use the radar
+    radarJobs = {
+        -- jobname = rank
+        ['police'] = 0,
+        ['bcso'] = 0,
+    },
+
     -- Default state of the radar when the resource is started.
-    defaultShowingRadar = true, -- DEFAULT: true
+    defaultShowingRadar = false, -- DEFAULT: true
+
+    -- Default state of the radar when the resource is started ( will be changed when editing ).
+    autoLockSpeed = 0, -- DEFAULT: 0 KMH
 
     -- Command to show/hide the radar.
     showRadarCommand = 'radar', -- DEFAULT: radar
     -- Keybind to show/hide the radar.
     showRadarKeybind = 'F7', -- DEFAULT: F7
 
-    speedType = 'MPH', -- KMH or MPH
+    speedType = 'KMH', -- KMH or MPH
 
     -- Command to lock/unlock the radar.
     lockRadarCommand = 'lockradar', -- DEFAULT: lockradar
     -- Keybind to lock/unlock the radar.
-    lockRadarKeybind = 'F6', -- DEFAULT: F6
+    lockRadarKeybind = 'U', -- DEFAULT: U
     
     -- Command to change the radar position.
-    changeRadarPositionCommand = 'posradar', -- DEFAULT: posradar
+    changeRadarPositionCommand = 'radarpos', -- DEFAULT: posradar
 
     -- Interval in milliseconds to update the radar. The lower the value, the more accurate the radar will be, but it will consume more resources (higher resmon).
-    radarUpdateInterval = 200, -- DEFAULT: 200
+    radarUpdateInterval = 350, -- DEFAULT: 200
 }

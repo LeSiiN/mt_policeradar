@@ -1,12 +1,12 @@
 {
-    "locked": "Radar locked",
-    "unlocked": "Radar unlocked",
-    "enabled": "Radar enabled",
-    "disabled": "Radar disabled",
-    "front": "Front",
-    "rear": "Rear",
-    "plate": "Plate",
-    "speed": "Speed",
-    "lockRadarKeybind": "Lock/Unlock radar",
-    "toggleRadarKeybind": "Enable/Disable radar"
+    "locked": "Radar gesperrt",
+    "unlocked": "Radar entsperrt",
+    "enabled": "Radar eingeschaltet",
+    "disabled": "Radar ausgeschaltet",
+    "front": "Vorne",
+    "rear": "Hinten",
+    "plate": "Kennzeichen",
+    "speed": "Geschwindigkeit",
+    "lockRadarKeybind": "▶️ Radar Sperren/Entsperren",
+    "toggleRadarKeybind": "▶️ Radar AN/AUS"
 }
